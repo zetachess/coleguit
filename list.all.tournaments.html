@@ -223,7 +223,7 @@
 										var json = JSON.parse('['+text.split("}\n{").join("},{")+']');//oh fuck off NDJSON! because comma is not cool enough? TODO:how do i parse this shit properly
 										for (var x in json){
 											console.log("xxxxxxx="+json[x]["variant"]);
-											if (json[x]["status"] != 30 && json[x]["variant"] === "crazyhouse"/*TODO:filter the others as well just in case*/) {
+											if (json[x]["status"] != 30) {
 												outerThis.$data.tournamentsTmp.push(new Tournament(json[x]));
 											}
 										}
