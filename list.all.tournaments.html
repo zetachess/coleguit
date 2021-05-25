@@ -222,16 +222,13 @@
 									}).then( function( text ) {
 										var json = JSON.parse('['+text.split("}\n{").join("},{")+']');//oh fuck off NDJSON! because comma is not cool enough? TODO:how do i parse this shit properly
 										for (var x in json){
-											console.log("xxxxxxx=");
-											console.log(json[x]["variant"]);
-											if (json[x]["status"] != 30) {
+											if (json[x]["status"] != 30 && json[x]["variant"]["key"] == "crazyhouse") {
 												outerThis.$data.tournamentsTmp.push(new Tournament(json[x]));
 											}
 										}
 									}).then ( function(){
 										outerThis.$data.tournamentsTmp.sort(function(a, b){return a.json['startsAt']-b.json['startsAt']});
 										for (x in outerThis.$data.tournamentsTmp){
-											console.log(outerThis.$data.tournamentsTmp[x]);
 											outerThis.$data.tournaments.push(outerThis.$data.tournamentsTmp[x]);
 										}
 									}).catch( function( error ) {
