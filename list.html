@@ -219,7 +219,8 @@
 			}).catch( function( error ) {
 				console.info( "Received error ", error);
 			});
-				
+			await r1;
+
 			///////////////////////////////////
 			let r2 = fetch( "https://lichess.org/api/user/undergroundzh2/tournament/created" ).then( function( response ) {
 				if ( !response.ok ) {
@@ -260,7 +261,6 @@
 			}).catch( function( error ) {
 				console.info( "Received error ", error);
 			});
-			await r1;
 			await r2;
 			await r22;
 			outerThis.$data.loading12 = false;
