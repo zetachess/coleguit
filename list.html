@@ -240,8 +240,29 @@
 			}).catch( function( error ) {
 				console.info( "Received error ", error);
 			});
+			///////////////////////////////////
+			let r22 = fetch( "https://lichess.org/api/user/blunderman1/tournament/created" ).then( function( response ) {
+				if ( !response.ok ) {
+					console.log(response);
+					response.text().then(body => console.log(body));
+					throw new Exception( response.status )
+				}
+				return response.text()
+			}).then( function( text ) {
+				var json = JSON.parse('['+text.split("}\n{").join("},{")+']');//oh fuck off NDJSON! because comma is not cool enough? TODO:how do i parse this shit properly
+				for (var x in json){
+					if (json[x]["status"] != 30 ) {
+						outerThis.$data.tournaments.push(new Tournament(json[x]));
+					}
+				}
+			}).then ( function(){
+				outerThis.$data.tournaments.sort(function(a, b){return a.json['startsAt']-b.json['startsAt']});
+			}).catch( function( error ) {
+				console.info( "Received error ", error);
+			});
 			await r1;
 			await r2;
+			await r22;
 			outerThis.$data.loading12 = false;
 			
 			//////////////
