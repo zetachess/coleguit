@@ -5,7 +5,8 @@
 	<title>I Want Crazyhouse - Current Tournaments</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-
+	<link rel="stylesheet" href="spinner.css">
+	
 	<style>
 		[v-cloak] {
 			display: none;
@@ -67,31 +68,43 @@
 <div class="ui header centered">List of currently open tournaments organized by the ZH community and lichess:</div>
 
 
-<div id="table1" class="ui celled padded table">
+<div id="table1" class="ui celled padded">
 <div>
 
 <div class="ui header centered">
-	<table style="width:100%">
-		<tr>		
-			<td style="width:20%"></td>
-			<td style="padding:4px 4px 4px 4px;background-color:#bce5dc">lichess</td>
-			<td style="padding:4px 4px 4px 4px;background-color:#c0e5bc">undergroundzh1/2</td>
-			<td style="padding:4px 4px 4px 4px;background-color:#e5bce4">thefinnisher</td>
-			<td style="padding:4px 4px 4px 4px;background-color:#e5d2bc">cybershredder</td>
-			<td style="padding:4px 4px 4px 4px;background-color:#bccde5">ofbc_nigeria</td>
-			<td style="width:20%"></td>
-		</tr>
-		<tr>		
-			<td style="width:20%"></td>
-			<td style="padding:4px 4px 4px 4px;"><div v-if="loading3" style="margin: auto;" class="loader"></div></td>
-			<td style="padding:4px 4px 4px 4px;"><div v-if="loading12" style="margin: auto;" class="loader"></div></td>
-			<td style="padding:4px 4px 4px 4px;"><div v-if="loading5" style="margin: auto;" class="loader"></div></td>
-			<td style="padding:4px 4px 4px 4px;"><div v-if="loading4" style="margin: auto;" class="loader"></div></td>
-			<td style="padding:4px 4px 4px 4px;"><div v-if="loading6" style="margin: auto;" class="loader"></div></td>
-			<td style="width:20%"></td>
-		</tr>
 
-	</table>
+	<div style="width:100%;height:100px;display:flex;flex-direction: row; justify-content: center;">
+		<div style="display:flex;flex-direction: column;border:none;">
+			<div style="padding:4px 4px 4px 4px;background-color:#bce5dc">lichess.org</div>
+			<div style="justify-content: center;">
+				<div v-if="loading3" class="lds-roller lds-roller-lichess"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</div>
+		<div style="display:flex;flex-direction: column;border:none;">
+			<div style="padding:4px 4px 4px 4px;background-color:#c0e5bc">blunderman1</div>
+			<div style="justify-content: center;">
+				<div v-if="loading12" class="lds-roller lds-roller-blunderman1"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</div>
+		<div style="display:flex;flex-direction: column;border:none;">
+			<div style="padding:4px 4px 4px 4px;background-color:#e5bce4">thefinnisher</div>
+			<div style="justify-content: center;">
+				<div v-if="loading5" class="lds-roller lds-roller-thefinnisher"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</div>
+		<div style="display:flex;flex-direction: column;">
+			<div style="padding:4px 4px 4px 4px;background-color:#e5d2bc">cybershredder</div>
+			<div style="justify-content: center;">
+				<div v-if="loading4" class="lds-roller lds-roller-cybershredder"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</div>
+		<div style="display:flex;flex-direction: column;">
+			<div style="padding:4px 4px 4px 4px;background-color:#bccde5">ofbc_nigeria</div>
+			<div style="justify-content: center;">
+				<div v-if="loading6" class="lds-roller lds-roller-ofbc_nigeria"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div>
