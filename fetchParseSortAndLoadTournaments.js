@@ -11,7 +11,7 @@ function fetchParseSortAndLoadTournamentsForUser(url, tournaments){
 					}
 					return response.text()
 				}).then( function( text ) {
-					var json = JSON.parse('['+text.split("}\n{").join("},{")+']');//oh fuck off NDJSON! because comma is not cool enough? TODO:how do i parse this shit properly
+					var json = JSON.parse('['+text.split("}\n{").join("},{")+']');//TODO:how do i parse this properly
 					for (var x in json){
 						if (json[x]["status"] != 30 && json[x]["variant"]["key"] == "crazyhouse") {
 							tournaments.push(new Tournament(json[x]));
