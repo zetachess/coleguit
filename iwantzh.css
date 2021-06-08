@@ -1,0 +1,29 @@
+[v-cloak] {
+			display: none;
+		}
+		
+		.ui.table thead tr:first-child > th {
+			position: sticky !important;
+     		top: 0;
+     		z-index: 2;
+		}
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			background-color: white;
+			text-align: center;
+			padding: 0px 0;
+
+			/* Position the tooltip */
+			position: absolute;
+			z-index: 1;
+			top: -5px;
+		}
+
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
