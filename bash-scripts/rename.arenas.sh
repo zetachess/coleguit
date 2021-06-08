@@ -21,9 +21,9 @@ for filename in `ls ./$dir_with_jsons/*.json | sort -gr`; do
     description="Full list of existing tournaments: [https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)%0A%0AAlways one 24/7"
     if [ "$prevTournamentId" == 'z' ]
     then
-        description="Full list of existing tournaments: [https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)%0A%0AAlways one 24/7"
+        description="Full list of existing tournaments: [https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)%0A-------------------------------------------%0AThere is always one. Anytime. 24/7%0A-------------------------------------------"
     else
-        description="Full list of existing tournaments: [https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)%0A%0A[Next+UZH+Arena:+$prevTC](https://lichess.org/tournament/$prevTournamentId)"
+        description="Full list of existing tournaments: [https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)%0A-------------------------------------------%0A[Next+UZH+Arena:+$prevTC](https://lichess.org/tournament/$prevTournamentId)%0A-------------------------------------------"
     fi
     #echo $description
 
